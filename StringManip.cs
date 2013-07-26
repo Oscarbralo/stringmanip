@@ -158,17 +158,14 @@ namespace StringManipulation
 
         static void reverse(string a)
         {
-            char[] c = a.ToCharArray();
-            char[] crev = new char[c.Length];
+            StringBuilder sr = new StringBuilder("");
 
-            for (int i = 0; i < c.Length; i++)
+            for (int i = a.Length - 1; i >= 0; i--)
             {
-                crev[i] = c[c.Length - 1 - i];
+                sr.Append(a[i].ToString());
             }
-
-            string b = new string(crev);
-
-            Console.WriteLine("The reverse of " + a + " is " + b + "\n\n\n");
+            
+            Console.WriteLine("The reverse of " + a + " is " + sr.ToString() + "\n\n\n");
         }
 
         static void palin(string a)
